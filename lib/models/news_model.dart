@@ -1,12 +1,12 @@
-class news_model {
+class NewsModel {
   String? status;
   int? totalResults;
   List<Results>? results;
   String? nextPage;
 
-  news_model({this.status, this.totalResults, this.results, this.nextPage});
+  NewsModel({this.status, this.totalResults, this.results, this.nextPage});
 
-  news_model.fromJson(Map<String, dynamic> json) {
+  NewsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['results'] != null) {
