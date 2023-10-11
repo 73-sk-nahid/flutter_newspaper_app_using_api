@@ -1,7 +1,7 @@
 class NewsModel {
   String? status;
   int? totalResults;
-  List<Results>? results;
+  List<Article>? results;
   String? nextPage;
 
   NewsModel({this.status, this.totalResults, this.results, this.nextPage});
@@ -10,9 +10,9 @@ class NewsModel {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['results'] != null) {
-      results = <Results>[];
+      results = <Article>[];
       json['results'].forEach((v) {
-        results!.add(new Results.fromJson(v));
+        results!.add(new Article.fromJson(v));
       });
     }
     nextPage = json['nextPage'];
@@ -30,7 +30,7 @@ class NewsModel {
   }
 }
 
-class Results {
+class Article {
   String? articleId;
   String? title;
   String? link;
@@ -47,7 +47,7 @@ class Results {
   List<String>? category;
   String? language;
 
-  Results(
+  Article(
       {this.articleId,
       this.title,
       this.link,
@@ -64,7 +64,7 @@ class Results {
       this.category,
       this.language});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  Article.fromJson(Map<String, dynamic> json) {
     articleId = json['article_id'];
     title = json['title'];
     link = json['link'];
