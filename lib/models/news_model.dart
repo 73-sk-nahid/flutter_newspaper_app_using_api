@@ -1,104 +1,74 @@
 class NewsModel {
-  String? status;
-  int? totalResults;
-  List<Article>? articles;
-  String? nextPage;
+  String ? status;
+  int ? totalResults;
+  List < Article > ? articles;
 
-  NewsModel({this.status, this.totalResults, this.articles, this.nextPage});
+  NewsModel({
+    this.status,
+    this.totalResults,
+    this.articles
+  });
 
-  NewsModel.fromJson(Map<String, dynamic> json) {
+  NewsModel.fromJson(Map < String, dynamic > json) {
     status = json['status'];
     totalResults = json['totalResults'];
-    if (json['results'] != null) {
-      articles = <Article>[];
-      json['results'].forEach((v) {
-        articles!.add(new Article.fromJson(v));
+    if (json['articles'] != null) {
+      articles = < Article > [];
+      json['articles'].forEach((v) {
+        articles!.add(Article.fromJson(v));
       });
     }
-    nextPage = json['nextPage'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    data['totalResults'] = this.totalResults;
-    if (this.articles != null) {
-      data['results'] = this.articles!.map((v) => v.toJson()).toList();
+  Map < String, dynamic > toJson() {
+    final Map < String, dynamic > data = < String, dynamic > {};
+    data['status'] = status;
+    data['totalResults'] = totalResults;
+    if (articles != null) {
+      data['articles'] = articles!.map((v) => v.toJson()).toList();
     }
-    data['nextPage'] = this.nextPage;
     return data;
   }
 }
 
 class Article {
-  String? articleId;
-  String? title;
-  String? link;
-  List<String>? keywords;
-  List<String>? creator;
-  Null? videoUrl;
-  String? description;
-  String? content;
-  String? pubDate;
-  String? imageUrl;
-  String? sourceId;
-  int? sourcePriority;
-  List<String>? country;
-  List<String>? category;
-  String? language;
+  String ? author;
+  String ? title;
+  String ? description;
+  String ? url;
+  String ? urlToImage;
+  String ? publishedAt;
+  String ? content;
 
-  Article(
-      {this.articleId,
-        this.title,
-        this.link,
-        this.keywords,
-        this.creator,
-        this.videoUrl,
-        this.description,
-        this.content,
-        this.pubDate,
-        this.imageUrl,
-        this.sourceId,
-        this.sourcePriority,
-        this.country,
-        this.category,
-        this.language});
+  Article({
+    this.author,
+    this.title,
+    this.description,
+    this.url,
+    this.urlToImage,
+    this.publishedAt,
+    this.content
+  });
 
-  Article.fromJson(Map<String, dynamic> json) {
-    articleId = json['article_id'];
+  Article.fromJson(Map < String, dynamic > json) {
+    author = json['author'];
     title = json['title'];
-    link = json['link'];
-    keywords = json['keywords'].cast<String>();
-    creator = json['creator'].cast<String>();
-    videoUrl = json['video_url'];
     description = json['description'];
+    url = json['url'];
+    urlToImage = json['urlToImage'];
+    publishedAt = json['publishedAt'];
     content = json['content'];
-    pubDate = json['pubDate'];
-    imageUrl = json['image_url'];
-    sourceId = json['source_id'];
-    sourcePriority = json['source_priority'];
-    country = json['country'].cast<String>();
-    category = json['category'].cast<String>();
-    language = json['language'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['article_id'] = this.articleId;
-    data['title'] = this.title;
-    data['link'] = this.link;
-    data['keywords'] = this.keywords;
-    data['creator'] = this.creator;
-    data['video_url'] = this.videoUrl;
-    data['description'] = this.description;
-    data['content'] = this.content;
-    data['pubDate'] = this.pubDate;
-    data['image_url'] = this.imageUrl;
-    data['source_id'] = this.sourceId;
-    data['source_priority'] = this.sourcePriority;
-    data['country'] = this.country;
-    data['category'] = this.category;
-    data['language'] = this.language;
+  Map < String, dynamic > toJson() {
+    final Map < String, dynamic > data = < String, dynamic > {};
+    data['author'] = author;
+    data['title'] = title;
+    data['description'] = description;
+    data['url'] = url;
+    data['urlToImage'] = urlToImage;
+    data['publishedAt'] = publishedAt;
+    data['content'] = content;
     return data;
   }
 }

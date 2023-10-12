@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'news_provider.dart';
 
@@ -27,82 +27,77 @@ mixin _$NewsState {
 /// @nodoc
 abstract class $NewsStateCopyWith<$Res> {
   factory $NewsStateCopyWith(NewsState value, $Res Function(NewsState) then) =
-      _$NewsStateCopyWithImpl<$Res, NewsState>;
-  @useResult
+  _$NewsStateCopyWithImpl<$Res>;
   $Res call({bool isLoading, NewsModel newsModel});
 }
 
 /// @nodoc
-class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
-    implements $NewsStateCopyWith<$Res> {
+class _$NewsStateCopyWithImpl<$Res> implements $NewsStateCopyWith<$Res> {
   _$NewsStateCopyWithImpl(this._value, this._then);
 
+  final NewsState _value;
   // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final $Res Function(NewsState) _then;
 
-  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
+    Object? isLoading = freezed,
     Object? newsModel = freezed,
   }) {
     return _then(_value.copyWith(
-      isLoading: null == isLoading
+      isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      newsModel: freezed == newsModel
+      as bool,
+      newsModel: newsModel == freezed
           ? _value.newsModel
           : newsModel // ignore: cast_nullable_to_non_nullable
-              as NewsModel,
-    ) as $Val);
+      as NewsModel,
+    ));
   }
 }
 
 /// @nodoc
-abstract class _$$NewsStateImplCopyWith<$Res>
-    implements $NewsStateCopyWith<$Res> {
-  factory _$$NewsStateImplCopyWith(
-          _$NewsStateImpl value, $Res Function(_$NewsStateImpl) then) =
-      __$$NewsStateImplCopyWithImpl<$Res>;
+abstract class _$$_NewsStateCopyWith<$Res> implements $NewsStateCopyWith<$Res> {
+  factory _$$_NewsStateCopyWith(
+      _$_NewsState value, $Res Function(_$_NewsState) then) =
+  __$$_NewsStateCopyWithImpl<$Res>;
   @override
-  @useResult
   $Res call({bool isLoading, NewsModel newsModel});
 }
 
 /// @nodoc
-class __$$NewsStateImplCopyWithImpl<$Res>
-    extends _$NewsStateCopyWithImpl<$Res, _$NewsStateImpl>
-    implements _$$NewsStateImplCopyWith<$Res> {
-  __$$NewsStateImplCopyWithImpl(
-      _$NewsStateImpl _value, $Res Function(_$NewsStateImpl) _then)
-      : super(_value, _then);
+class __$$_NewsStateCopyWithImpl<$Res> extends _$NewsStateCopyWithImpl<$Res>
+    implements _$$_NewsStateCopyWith<$Res> {
+  __$$_NewsStateCopyWithImpl(
+      _$_NewsState _value, $Res Function(_$_NewsState) _then)
+      : super(_value, (v) => _then(v as _$_NewsState));
 
-  @pragma('vm:prefer-inline')
+  @override
+  _$_NewsState get _value => super._value as _$_NewsState;
+
   @override
   $Res call({
-    Object? isLoading = null,
+    Object? isLoading = freezed,
     Object? newsModel = freezed,
   }) {
-    return _then(_$NewsStateImpl(
-      isLoading: null == isLoading
+    return _then(_$_NewsState(
+      isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      newsModel: freezed == newsModel
+      as bool,
+      newsModel: newsModel == freezed
           ? _value.newsModel
           : newsModel // ignore: cast_nullable_to_non_nullable
-              as NewsModel,
+      as NewsModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$NewsStateImpl extends _NewsState {
-  const _$NewsStateImpl({this.isLoading = true, required this.newsModel})
+class _$_NewsState extends _NewsState {
+  const _$_NewsState({this.isLoading = true, required this.newsModel})
       : super._();
 
   @override
@@ -120,27 +115,27 @@ class _$NewsStateImpl extends _NewsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NewsStateImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            other is _$_NewsState &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.newsModel, newsModel));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, isLoading, const DeepCollectionEquality().hash(newsModel));
+      runtimeType,
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(newsModel));
 
   @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$NewsStateImplCopyWith<_$NewsStateImpl> get copyWith =>
-      __$$NewsStateImplCopyWithImpl<_$NewsStateImpl>(this, _$identity);
+  _$$_NewsStateCopyWith<_$_NewsState> get copyWith =>
+      __$$_NewsStateCopyWithImpl<_$_NewsState>(this, _$identity);
 }
 
 abstract class _NewsState extends NewsState {
   const factory _NewsState(
       {final bool isLoading,
-      required final NewsModel newsModel}) = _$NewsStateImpl;
+        required final NewsModel newsModel}) = _$_NewsState;
   const _NewsState._() : super._();
 
   @override
@@ -149,6 +144,6 @@ abstract class _NewsState extends NewsState {
   NewsModel get newsModel;
   @override
   @JsonKey(ignore: true)
-  _$$NewsStateImplCopyWith<_$NewsStateImpl> get copyWith =>
+  _$$_NewsStateCopyWith<_$_NewsState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_newspaper_app_using_api/pages/home_page.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(
@@ -20,3 +19,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

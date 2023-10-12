@@ -1,4 +1,4 @@
 class ApiUrls {
-  static const String baseUrl =
-      'https://newsdata.io/api/1/news?apikey=pub_30632610d9a386cb8e1d400402b47fa427083';
+  static const String baseUrl = 'https://newsapi.org/';
+  static const String imageNotFound = 'https://www.charlotteathleticclub.com/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png';
 }
