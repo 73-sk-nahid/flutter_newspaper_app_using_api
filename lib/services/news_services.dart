@@ -8,7 +8,7 @@ class NewsService {
   ));
 
   fetchNews() async {
-    var response = await _dio.get('language=en');
+    var response = await _dio.get('&language=en');
     return response.data;
   }
 }

@@ -1,18 +1,18 @@
 class NewsModel {
   String? status;
   int? totalResults;
-  List<Article>? results;
+  List<Article>? articles;
   String? nextPage;
 
-  NewsModel({this.status, this.totalResults, this.results, this.nextPage});
+  NewsModel({this.status, this.totalResults, this.articles, this.nextPage});
 
   NewsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     totalResults = json['totalResults'];
     if (json['results'] != null) {
-      results = <Article>[];
+      articles = <Article>[];
       json['results'].forEach((v) {
-        results!.add(new Article.fromJson(v));
+        articles!.add(new Article.fromJson(v));
       });
     }
     nextPage = json['nextPage'];
@@ -22,8 +22,8 @@ class NewsModel {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['status'] = this.status;
     data['totalResults'] = this.totalResults;
-    if (this.results != null) {
-      data['results'] = this.results!.map((v) => v.toJson()).toList();
+    if (this.articles != null) {
+      data['results'] = this.articles!.map((v) => v.toJson()).toList();
     }
     data['nextPage'] = this.nextPage;
     return data;
@@ -49,20 +49,20 @@ class Article {
 
   Article(
       {this.articleId,
-      this.title,
-      this.link,
-      this.keywords,
-      this.creator,
-      this.videoUrl,
-      this.description,
-      this.content,
-      this.pubDate,
-      this.imageUrl,
-      this.sourceId,
-      this.sourcePriority,
-      this.country,
-      this.category,
-      this.language});
+        this.title,
+        this.link,
+        this.keywords,
+        this.creator,
+        this.videoUrl,
+        this.description,
+        this.content,
+        this.pubDate,
+        this.imageUrl,
+        this.sourceId,
+        this.sourcePriority,
+        this.country,
+        this.category,
+        this.language});
 
   Article.fromJson(Map<String, dynamic> json) {
     articleId = json['article_id'];

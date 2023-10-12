@@ -23,8 +23,7 @@ class NewsCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
-                  imageUrl: article.urlImage == null ?
-                  ApiUrls.imageNotFound : article.urlToImage.toString(),
+                  imageUrl: article.imageUrl.toString(),
                   errorWidget: (context, string, _) {
                     return const Icon(Icons.error);
                   },

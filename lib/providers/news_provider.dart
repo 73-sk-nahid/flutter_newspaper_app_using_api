@@ -15,7 +15,7 @@ class NewsState with _$NewsState {
 }
 
 class NewsNotifier extends StateNotifier<NewsState> {
-  NewsNotifier() : super(NewsState(newsModel: NewsModel(results: []))) {
+  NewsNotifier() : super(NewsState(newsModel: NewsModel(articles: []))) {
     loadNews();
   }
 
